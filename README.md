@@ -69,9 +69,25 @@ artefact.
 
 ## Quick-start (learner path)
 
+### Create a virtual environment
+
+The `.venv` name refers to a virtual-environment **directory**, not a single
+file. It stores a private Python interpreter and project-specific packages so
+this project does not change packages used by other projects on your computer.
+Using a virtual environment also makes it easier to reproduce the required
+dependency versions and avoid conflicts between packages.
+
+From the repository root, create and activate the environment with:
+
 ```bash
-cd learner/
-python -m venv .venv && source .venv/bin/activate
+cd learner
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+After activation, install packages into this environment:
+
+```bash
 pip install -r requirements.txt
 cp .env.example .env
 # Edit .env with your OPENAI_API_KEY and QDRANT_URL
@@ -84,6 +100,15 @@ python mp2_rag.py ingest        # one-time setup
 python mp2_rag.py validate      # check predefined questions
 python mp2_rag.py ask           # interactive Q&A
 ```
+
+When you finish working, leave the environment with:
+
+```bash
+deactivate
+```
+
+The `.venv/` directory should not be uploaded to GitHub because it is
+machine-specific and can be recreated from `requirements.txt`.
 
 ### Optional W9 stretch: hybrid + cross-encoder reranking
 
