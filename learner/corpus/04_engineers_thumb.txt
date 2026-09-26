@@ -1,0 +1,49 @@
+The Adventure of the Engineer's Thumb
+
+In the summer of 1889, Doctor Watson — by then married and back in private practice — was called early one morning to attend a patient at Paddington Station. A guard had brought the man in from the platform: a young, pale, well-dressed gentleman whose right hand was wrapped in a bloody handkerchief, his thumb severed cleanly at the base.
+
+Victor Hatherley, Hydraulic Engineer
+
+The patient introduced himself as Victor Hatherley, a hydraulic engineer of twenty-six. He had set up his own consulting practice the year before at 16A Victoria Street, with capital inherited on coming of age. Business had been quiet: only three consultations and one small commission in the year. Hatherley lived alone, took meals at a restaurant, and had no near relatives in London.
+
+Watson bandaged the wound. Hatherley, recovering his composure, asked Watson's advice. He had a story to tell and did not know whether to take it to the police. Watson, recognising at once that the case was one for Sherlock Holmes, took Hatherley directly from Paddington to Baker Street.
+
+The Mysterious Engagement
+
+Hatherley told Holmes the following. The previous afternoon, a client had called at his consulting rooms: a thin, austere man calling himself Colonel Lysander Stark. The Colonel spoke with a slight German accent and seemed nervous. He explained that he owned a small property in the country where he had built a hydraulic press, used to compress fuller's earth — a sedimentary clay mined on his land — into bricks for transport. The press, he said, had developed a leak, and he wished Hatherley to inspect it and recommend repairs.
+
+The Colonel offered fifty guineas for a single evening's work, on three conditions: complete secrecy, immediate travel that night, and the use of his own carriage from a country station, with the windows of the carriage blinded so Hatherley could not see the route. The work was to be done at a country house called Eyford, in Berkshire. The unusual terms, and the unusual sum, made Hatherley uneasy, but he needed the work. He agreed.
+
+Arrival at the House
+
+Hatherley took the last train from Reading to Eyford that night. A small brougham awaited him at the platform, drawn by a single horse. The lamps were extinguished and the windows blinded. He was driven for what he judged to be about an hour, though the actual distance might have been much shorter, as the carriage turned and doubled repeatedly. When the carriage stopped, he stepped out into a covered yard.
+
+He was met by Colonel Stark and a fair-haired, listless secretary called Ferguson. A woman appeared at the foot of the stairs — pale, distressed, and clearly frightened — and whispered urgently to Hatherley in a foreign accent: "For God's sake, go! Go while you can." Stark drew her away angrily before she could say more.
+
+The Hydraulic Press
+
+Hatherley was led to the press, which stood in a small room at the top of the house. It was, as he had been told, a hydraulic press of the standard type — but his examination of it convinced him that no one had ever used it to compress fuller's earth, or any clay-like substance. The floor of the press chamber was marked, not by the residue of earth, but by some metallic crust. Hatherley pointed out a leaking cylinder and explained the necessary repair, then made the mistake of asking what kind of fuller's earth produced metallic deposits.
+
+Colonel Stark's manner changed instantly. He stepped backward, shut the door of the press chamber upon Hatherley, and started the press. The ceiling — which was, in fact, the descending head of the press — began to come down. Hatherley realised that the chamber was a trap: a kill mechanism designed to crush an unwanted visitor against the metal floor.
+
+Escape
+
+Hatherley scrambled in the lessening space and at the last moment noticed a wooden panel at one side, which gave under pressure. He squeezed through and tumbled into a small unlit chamber. The frightened woman from earlier was there. She seized his hand, dragged him through a window onto a balcony, and pointed him toward a flowering vine he could climb down. As he started, Colonel Stark appeared at the window with a heavy meat-cleaver. The blade fell as Hatherley reached for the vine, taking off his right thumb at the base. He let go in shock and fell, somehow reaching the ground without injury beyond the wound.
+
+He fled. He remembered running. The next thing he knew clearly was lying on the grass at Eyford station at dawn, his thumb bleeding into a soaked handkerchief, with a guard bending over him.
+
+Holmes's Investigation
+
+Holmes listens to the account with a brightness in his eyes that Watson knows well. He summons a Scotland Yard inspector, Bradstreet, and the four of them — Holmes, Watson, Hatherley, and Bradstreet — set out at once for Eyford.
+
+At the station, Holmes draws a circle of ten miles' radius on a map. The carriage, he points out, could not have covered more than five or six miles in an hour, allowing for the deception of doubling back. Bradstreet suggests several possibilities. Just then a horseman shouts that a great fire is burning at a property called Beechmoor, three miles to the south. Holmes is certain instantly: the house has been set ablaze to destroy the evidence. The press, the secret stamping floor, and Colonel Stark's operation have all gone up.
+
+The Coining Operation
+
+What they find at Beechmoor confirms Holmes's deduction. The "hydraulic press" was being used to stamp counterfeit half-crowns from a base alloy of nickel and tin. The metal coating on the press floor was the residue of this stamping. The "fuller's earth" cover story had been invented to explain the press's presence without raising suspicion.
+
+Colonel Stark — whose real name was Doctor Becher of Reading — had escaped before the fire. With him went his secretary Ferguson and the woman whose warning had saved Hatherley's life. None of them are caught; they leave England.
+
+Hatherley keeps his story but loses his thumb. Holmes points out the consolation: Hatherley now has, at the very least, a story to dine out on for life. "You have lost a thumb, but you have gained a reputation," Holmes says.
+
+The case, dated to the summer of 1889, was one of those whose villain Holmes never brought to justice — but whose puzzle he solved completely within twenty-four hours.

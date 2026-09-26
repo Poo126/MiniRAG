@@ -1,0 +1,14 @@
+brew install python@3.12
+
+cd ~/Downloads/week9_graded/Week\ 9_Graded\ Mini\ Project\ Documents/AI-RAG_MP2_MiniRAG/learner
+
+mv .venv .venv-python314-backup
+/usr/local/opt/python@3.12/bin/python3.12 -m venv .venv
+
+.venv/bin/python --version
+.venv/bin/python -m pip install -r requirements.txt
+
+source .venv/bin/activate
+python --version
+
+python -m pip install -r requirements-stretch.txt

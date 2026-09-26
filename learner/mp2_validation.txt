@@ -1,0 +1,44 @@
+krsuveethakamatchi@Macs-Air learner % ./.venv/bin/python mp2_rag.py validate
+
+  Validating 2 questions from predefined_questions.jsonl…
+
+  ✓ q1_red_headed_league_assistant
+      Q: Who was the assistant working at Jabez Wilson's pawnshop, and what was his real identity?
+      Cited: 01_red_headed_league.txt
+      Expected: 01_red_headed_league.txt
+      Facts matched: 1/5
+      Latency: 20637ms
+
+  ✓ q2_speckled_band_murder_weapon
+      Q: What killed Julia Stoner at Stoke Moran, and how was the method discovered?
+      Cited: 02_speckled_band.txt
+      Expected: 02_speckled_band.txt
+      Facts matched: 3/6
+      Latency: 4430ms
+
+  Source-match: 2/2
+
+  Validating 3 questions from learner_questions.jsonl…
+
+  ✓ q3_red_headed_league
+      Q: How did Sherlock Holmes realize that Vincent Spaulding's job at Jabez Wilson's pawnshop was connected to a planned bank robbery?
+      Cited: 01_red_headed_league.txt
+      Expected: 01_red_headed_league.txt
+      Facts matched: 3/3
+      Latency: 4658ms
+
+  ✓ q4_speckled_band
+      Q: What was the method Doctor Roylott used to attack the Stoner sisters, and why did he target them?
+      Cited: 02_speckled_band.txt
+      Expected: 02_speckled_band.txt
+      Facts matched: 3/3
+      Latency: 4552ms
+
+  ✓ q5_blue_carbuncle
+      Q: How did the stolen Blue Carbuncle travel from James Ryder to Henry Baker, and why did Ryder fail to recover it?
+      Cited: 03_blue_carbuncle.txt
+      Expected: 03_blue_carbuncle.txt
+      Facts matched: 2/3
+      Latency: 4065ms
+
+  Source-match: 3/3

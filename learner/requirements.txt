@@ -1,0 +1,8 @@
+openai>=1.40.0
+qdrant-client>=1.10.0
+python-dotenv>=1.0.0      # optional — for loading .env if you don't 'source' it
+
+# ─── Stretch (W9 hybrid retrieval; cross-encoder is in requirements-stretch.txt)
+rank-bm25>=0.2.2
+numpy<2
+pybind11>=2.12

@@ -1,0 +1,79 @@
+# Mini-RAG Reflection
+
+## Improving Fact Matching
+
+The validator checks facts with an exact case-insensitive substring test. During testing, all three learner questions cited the correct story, but each initially matched **0/3 facts**. The retrieval was working; the expected facts were written as long explanatory sentences, while the generated answers used valid paraphrases. Because those full sentences did not appear character-for-character in the answers, the validator reported false zeroes.
+
+The predefined questions show the same limitation: the first matched **1/5 facts** and the second matched **4/6**, even though the source citations were correct. For example, punctuation, word order, and paraphrasing can make a fact count as missing even when the answer communicates it accurately.
+
+The first predefined question also exposed a retrieval issue: the required facts were split across different chunks:
+
+- `Vincent Spaulding` appeared in the pawnshop and assistant passages.
+- `John Clay`, his criminal record, and the white trouser-knee patches appeared in a later identity passage.
+
+The original validation retrieved only three chunks. The identity passage was often ranked below those first three results, so the language model never received all of the evidence it needed.
+
+## Changes Made
+
+1. **Expanded the retrieval context**
+   - Validation now retrieves up to ten chunks instead of three.
+   - This gives the generator access to facts that are relevant but ranked lower by semantic search.
+
+2. **Rebuilt the Qdrant collection during ingestion**
+   - Ingestion now recreates the collection before uploading the current chunks.
+   - This prevents stale or incomplete vectors from remaining in the collection after chunking changes.
+
+3. **Strengthened the system prompt**
+   - The prompt tells the model to answer every part of a multi-part question.
+   - For identity questions, it specifically requests names, aliases, reputation, crimes, and physical identifying marks.
+   - It also asks the model to preserve source wording where possible.
+
+4. **Added optional hybrid retrieval and reranking**
+   - BM25 improves exact matching for names and unusual phrases.
+   - Dense retrieval still captures meaning and related wording.
+   - Reciprocal-rank fusion combines both result lists.
+   - An optional cross-encoder can perform a final relevance ranking.
+
+5. **Made learner fact checks atomic**
+   - The three learner questions now use short, distinctive phrases such as `Clay`, `trained snake`, and `Alpha goose-club` as expected facts.
+   - Each phrase is independently checkable and is likely to appear in a correct answer, while the guidance fields retain the full explanation expected from a strong response.
+
+6. **Resolved the optional reranker dependency mismatch**
+   - The environment originally contained PyTorch `2.2.2`, Transformers `5.17.0`, and Sentence-Transformers `6.1.0`.
+   - Transformers `5.17.0` disabled PyTorch because it required PyTorch `2.5` or newer, so the cross-encoder reranker could not use the installed PyTorch version.
+   - The configured package index did not provide a newer PyTorch wheel for this environment. I therefore pinned the compatible optional stack in `requirements-stretch.txt` to Sentence-Transformers `<4.0.0` and Transformers `<5.0.0`.
+   - The resulting environment uses Transformers `4.57.6` with PyTorch `2.2.2`; `CrossEncoder` imports successfully and `pip check` reports no broken requirements.
+
+## Learner Questions
+
+The three learner questions cover different stories and retrieval challenges:
+
+- The Red-Headed League question tests whether the answer connects the fake copying job, Spaulding's cellar activity, the bank beside the pawnshop, and Holmes's observation of the dirty trousers.
+- The Speckled Band question tests both the snake-delivery method and Doctor Roylott's financial motive.
+- The Blue Carbuncle question is a harder multi-step question that follows the stone from Ryder, through the wrong goose and the Alpha goose-club, to Henry Baker.
+
+## Result
+
+After the retrieval and prompt changes, the first question improved from:
+
+```text
+Facts matched: 1/5
+```
+
+to:
+
+```text
+Facts matched: 4/5
+```
+
+The answer contained the assistant's name, John Clay's identity, his thief reputation, the listed crimes, and the white patches on his trouser knees. The remaining missed fact was caused by the validator's exact substring comparison: the answer used "murder, theft, smashing, and forgery" while the expected text omitted the Oxford comma. The learner questions now avoid this problem by using atomic expected phrases instead of complete paraphrase-sensitive sentences.
+
+In the latest validation run, the learner questions scored **7/9 facts** with the correct source cited for all three questions (**3/3**). The individual scores were **2/3** for the Red-Headed League, **3/3** for the Speckled Band, and **2/3** for the Blue Carbuncle. Because answers are generated by a language model, exact phrase matches can vary slightly between runs even when the underlying answer is correct.
+
+The source-match result remained successful at **2/2** for the predefined questions. This showed that retrieval was finding the correct stories, while the main improvement area was ensuring that all relevant chunks and all requested details reached the answer generator.
+
+The learner validation also cited the expected source for all three questions (**3/3**). This is important because it confirms that the lower fact scores were not caused by retrieving the wrong story. The remaining missed facts are mainly a limitation of exact phrase scoring and can change between runs as the generated wording changes.
+
+## Lesson Learned
+
+A correct source citation does not guarantee a complete answer, and an exact substring score does not perfectly measure answer quality. Retrieval depends on finding the right document and providing enough relevant chunks to cover all the facts in a question. For multi-part questions, a larger candidate pool, atomic expected phrases, exact keyword matching, and explicit answer-completeness instructions provide a more useful validation signal. The current harness still has residual risk because it does not recognize synonyms or paraphrases.

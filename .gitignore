@@ -1,0 +1,5 @@
+learner/.venv/
+learner/.env
+**/__pycache__/
+*.pyc
+*.zip
